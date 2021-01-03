@@ -3,8 +3,9 @@
 // We are linking our routes to a series of "data"
 // ===============================================================================
 
-const database = require("../Develop/db/db.json");
 const fs = require("fs");
+const database = require("../Develop/db/db.json")
+
 
 
 // ===============================================================================
@@ -19,15 +20,7 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.get("/api/notes", function(req, res) {
-    fs.readFile("../Develop/db/db.json", "utf8", function (err, data) {
-      if (err) {
-        console.log(err)
-      }
-      else {
-        newNotes = JSON.parse(data);
-      }
-    } )
-    res.json(newNotes);
+    res.json(database);
   });
 
   // API POST Requests
@@ -45,7 +38,7 @@ module.exports = function(app) {
   // I added this below code so you could clear out the table while working with the functionality.
   // Don"t worry about it!
 
-  app.post("/api/clear", function(req, res) {
+  app.delete("/api/notes/:id", function(req, res) {
     // Empty out the arrays of data
     tableData.length = 0;
     waitListData.length = 0;
