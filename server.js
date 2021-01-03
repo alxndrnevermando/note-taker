@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
+const path = require("path")
 
 const PORT = process.env.port || 3000;
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, '/public')));
 
 require("./routes/api-route")(app);
 require("./routes/html-route")(app);
