@@ -19,7 +19,15 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.get("/api/notes", function(req, res) {
-    res.json(database);
+    fs.readFile("../Develop/db/db.json", "utf8", function (err, data) {
+      if (err) {
+        console.log(err)
+      }
+      else {
+        newNotes = JSON.parse(data);
+      }
+    } )
+    res.json(newNotes);
   });
 
   // API POST Requests
