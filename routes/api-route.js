@@ -19,12 +19,8 @@ module.exports = function(app) {
   // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
   // ---------------------------------------------------------------------------
 
-  app.get("/api/tables", function(req, res) {
-    res.json(tableData);
-  });
-
-  app.get("/api/waitlist", function(req, res) {
-    res.json(waitListData);
+  app.get("/api/notes", function(req, res) {
+    res.json(database);
   });
 
   // API POST Requests
