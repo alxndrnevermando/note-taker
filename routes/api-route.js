@@ -32,6 +32,7 @@ module.exports = function(app) {
       title: req.body.title,
       text: req.body.text
     }
+    console.log("I'm working!!")
   });
 
   // ---------------------------------------------------------------------------

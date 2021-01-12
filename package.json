@@ -1,5 +1,14 @@
 {
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "Create, store, and delete notes.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Armando Contreras",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.16.4"
   }
 }
